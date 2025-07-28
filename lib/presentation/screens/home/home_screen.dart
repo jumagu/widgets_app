@@ -13,13 +13,13 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Flutter + Material 3'),
       ),
-      body: const __HomeView(),
+      body: const _HomeView(),
     );
   }
 }
 
-class __HomeView extends StatelessWidget {
-  const __HomeView();
+class _HomeView extends StatelessWidget {
+  const _HomeView();
 
   @override
   Widget build(BuildContext context) {
@@ -28,16 +28,16 @@ class __HomeView extends StatelessWidget {
       itemCount: appMenuItems.length,
       itemBuilder: (context, index) {
         final menuItem = appMenuItems[index];
-        return __CustomListTile(menuItem: menuItem);
+        return _CustomListTile(menuItem: menuItem);
       },
     );
   }
 }
 
-class __CustomListTile extends StatelessWidget {
+class _CustomListTile extends StatelessWidget {
   final MenuItem menuItem;
 
-  const __CustomListTile({
+  const _CustomListTile({
     required this.menuItem,
   });
 
