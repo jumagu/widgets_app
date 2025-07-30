@@ -61,7 +61,6 @@ class _ButtonsView extends StatelessWidget {
                 onPressed: () {},
                 icon: const Icon(Icons.radar_outlined),
                 label: const Text('Text icon')),
-
             IconButton(onPressed: () {}, icon: Icon(Icons.app_registration)),
             IconButton(
               onPressed: () {},
@@ -80,10 +79,36 @@ class _ButtonsView extends StatelessWidget {
                   //   },
                   // )
                   ),
-            )
-
-            // TODO custom button
+            ),
+            const CustomButton()
           ],
+        ),
+      ),
+    );
+  }
+}
+
+// ? This is just a way to create a custom button. Not the only one.
+class CustomButton extends StatelessWidget {
+  const CustomButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final themeColors = Theme.of(context).colorScheme;
+
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(120),
+      child: Material(
+        color: themeColors.primary,
+        child: InkWell(
+          // ? Like a gesture detector
+          onTap: () {},
+          child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Text(
+                'hello',
+                style: TextStyle(color: Colors.white),
+              )),
         ),
       ),
     );
