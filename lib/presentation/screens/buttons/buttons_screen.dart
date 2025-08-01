@@ -41,26 +41,32 @@ class _ButtonsView extends StatelessWidget {
           children: [
             ElevatedButton(onPressed: () {}, child: const Text('Elevated')),
             const ElevatedButton(
-                onPressed: null, child: Text('Elevated disabled')),
+              onPressed: null,
+              child: Text('Elevated disabled'),
+            ),
             ElevatedButton.icon(
-                onPressed: () {},
-                icon: Icon(Icons.access_alarm_rounded),
-                label: const Text('Elevated icon')),
+              onPressed: () {},
+              icon: Icon(Icons.access_alarm_rounded),
+              label: const Text('Elevated icon'),
+            ),
             FilledButton(onPressed: () {}, child: const Text('Filled')),
             FilledButton.icon(
-                onPressed: () {},
-                icon: const Icon(Icons.accessibility_new),
-                label: const Text('Filled icon')),
+              onPressed: () {},
+              icon: const Icon(Icons.accessibility_new),
+              label: const Text('Filled icon'),
+            ),
             OutlinedButton(onPressed: () {}, child: const Text('Outlined')),
             OutlinedButton.icon(
-                onPressed: () {},
-                icon: const Icon(Icons.youtube_searched_for_rounded),
-                label: const Text('Outlined icon')),
+              onPressed: () {},
+              icon: const Icon(Icons.youtube_searched_for_rounded),
+              label: const Text('Outlined icon'),
+            ),
             TextButton(onPressed: () {}, child: const Text('Text')),
             TextButton.icon(
-                onPressed: () {},
-                icon: const Icon(Icons.radar_outlined),
-                label: const Text('Text icon')),
+              onPressed: () {},
+              icon: const Icon(Icons.radar_outlined),
+              label: const Text('Text icon'),
+            ),
             IconButton(onPressed: () {}, icon: Icon(Icons.app_registration)),
             IconButton(
               onPressed: () {},
@@ -69,18 +75,18 @@ class _ButtonsView extends StatelessWidget {
                 color: Colors.white,
               ),
               style: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll(themeColors.primary)
-                  // backgroundColor: WidgetStateProperty.resolveWith<Color>(
-                  //   (states) {
-                  //     if (states.contains(WidgetState.pressed)) {
-                  //       return themeColors.secondary;
-                  //     }
-                  //     return themeColors.primary;
-                  //   },
-                  // )
-                  ),
+                backgroundColor: WidgetStatePropertyAll(themeColors.primary),
+                // backgroundColor: WidgetStateProperty.resolveWith<Color>(
+                //   (states) {
+                //     if (states.contains(WidgetState.pressed)) {
+                //       return themeColors.secondary;
+                //     }
+                //     return themeColors.primary;
+                //   },
+                // )
+              ),
             ),
-            const CustomButton()
+            const CustomButton(),
           ],
         ),
       ),
@@ -104,11 +110,12 @@ class CustomButton extends StatelessWidget {
           // ? Like a gesture detector
           onTap: () {},
           child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Text(
-                'hello',
-                style: TextStyle(color: Colors.white),
-              )),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Text(
+              'hello',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
         ),
       ),
     );

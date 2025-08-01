@@ -39,9 +39,9 @@ class __ProgressView extends StatelessWidget {
             spacing: 10,
             children: [
               Text('Circular and Linear - Controlled Progress Indicator'),
-              _ControlledProgressIndicator()
+              _ControlledProgressIndicator(),
             ],
-          )
+          ),
         ],
       ),
     );
@@ -74,9 +74,10 @@ class _ControlledProgressIndicator extends StatelessWidget {
               ),
               // ? Takes all of the available space provided by the parent widget
               Expanded(
-                  child: LinearProgressIndicator(
-                value: progressValue,
-              )),
+                child: LinearProgressIndicator(
+                  value: progressValue,
+                ),
+              ),
             ],
           ),
         );

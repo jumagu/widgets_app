@@ -34,14 +34,22 @@ class _CardsView extends StatelessWidget {
       child: Column(
         spacing: 5,
         children: [
-          ...cards.map((card) =>
-              _CardType1(label: card['label'], elevation: card['elevation'])),
-          ...cards.map((card) =>
-              _CardType2(label: card['label'], elevation: card['elevation'])),
-          ...cards.map((card) =>
-              _CardType3(label: card['label'], elevation: card['elevation'])),
-          ...cards.map((card) =>
-              _CardType4(label: card['label'], elevation: card['elevation'])),
+          ...cards.map(
+            (card) =>
+                _CardType1(label: card['label'], elevation: card['elevation']),
+          ),
+          ...cards.map(
+            (card) =>
+                _CardType2(label: card['label'], elevation: card['elevation']),
+          ),
+          ...cards.map(
+            (card) =>
+                _CardType3(label: card['label'], elevation: card['elevation']),
+          ),
+          ...cards.map(
+            (card) =>
+                _CardType4(label: card['label'], elevation: card['elevation']),
+          ),
           // const SizedBox( // ? A sloppy way to add a space at the end
           //   height: 20,
           // )
@@ -66,12 +74,13 @@ class _CardType1 extends StatelessWidget {
         child: Column(
           children: [
             Align(
-                alignment: Alignment.topRight,
-                child: IconButton(
-                  icon: Icon(Icons.more_vert_outlined),
-                  onPressed: () {},
-                )),
-            Align(alignment: Alignment.bottomLeft, child: Text(label))
+              alignment: Alignment.topRight,
+              child: IconButton(
+                icon: Icon(Icons.more_vert_outlined),
+                onPressed: () {},
+              ),
+            ),
+            Align(alignment: Alignment.bottomLeft, child: Text(label)),
           ],
         ),
       ),
@@ -91,22 +100,25 @@ class _CardType2 extends StatelessWidget {
 
     return Card(
       shape: RoundedRectangleBorder(
-          borderRadius: const BorderRadius.all(Radius.circular(12)),
-          side: BorderSide(color: themeColors.outline)),
+        borderRadius: const BorderRadius.all(Radius.circular(12)),
+        side: BorderSide(color: themeColors.outline),
+      ),
       elevation: elevation,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
         child: Column(
           children: [
             Align(
-                alignment: Alignment.topRight,
-                child: IconButton(
-                  icon: Icon(Icons.more_vert_outlined),
-                  onPressed: () {},
-                )),
+              alignment: Alignment.topRight,
+              child: IconButton(
+                icon: Icon(Icons.more_vert_outlined),
+                onPressed: () {},
+              ),
+            ),
             Align(
-                alignment: Alignment.bottomLeft,
-                child: Text('$label - Outlined'))
+              alignment: Alignment.bottomLeft,
+              child: Text('$label - Outlined'),
+            ),
           ],
         ),
       ),
@@ -132,13 +144,16 @@ class _CardType3 extends StatelessWidget {
         child: Column(
           children: [
             Align(
-                alignment: Alignment.topRight,
-                child: IconButton(
-                  icon: Icon(Icons.more_vert_outlined),
-                  onPressed: () {},
-                )),
+              alignment: Alignment.topRight,
+              child: IconButton(
+                icon: Icon(Icons.more_vert_outlined),
+                onPressed: () {},
+              ),
+            ),
             Align(
-                alignment: Alignment.bottomLeft, child: Text('$label - Filled'))
+              alignment: Alignment.bottomLeft,
+              child: Text('$label - Filled'),
+            ),
           ],
         ),
       ),
@@ -165,17 +180,19 @@ class _CardType4 extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           Align(
-              alignment: Alignment.topRight,
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius:
-                        BorderRadius.only(bottomLeft: Radius.circular(20))),
-                child: IconButton(
-                  icon: Icon(Icons.more_vert_outlined),
-                  onPressed: () {},
-                ),
-              )),
+            alignment: Alignment.topRight,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius:
+                    BorderRadius.only(bottomLeft: Radius.circular(20)),
+              ),
+              child: IconButton(
+                icon: Icon(Icons.more_vert_outlined),
+                onPressed: () {},
+              ),
+            ),
+          ),
         ],
       ),
     );

@@ -21,21 +21,25 @@ class SnackbarScreen extends StatelessWidget {
   void openDialog(BuildContext context) {
     // ? Seeing a builder means that it going to be built in runtime
     showDialog(
-        context: context,
-        barrierDismissible: false, // ? Blocks the outside touch close
-        builder: (context) => AlertDialog(
-              title: const Text('Are you sure'),
-              content: const Text(
-                  'Laboris minim nisi enim aliquip sunt id nulla incididunt nostrud id laboris id consequat deserunt.'),
-              actions: [
-                TextButton(
-                    onPressed: () => context.pop(),
-                    child: const Text('Cancel')),
-                FilledButton(
-                    onPressed: () => context.pop(),
-                    child: const Text('Confirm')),
-              ],
-            ));
+      context: context,
+      barrierDismissible: false, // ? Blocks the outside touch close
+      builder: (context) => AlertDialog(
+        title: const Text('Are you sure'),
+        content: const Text(
+          'Laboris minim nisi enim aliquip sunt id nulla incididunt nostrud id laboris id consequat deserunt.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => context.pop(),
+            child: const Text('Cancel'),
+          ),
+          FilledButton(
+            onPressed: () => context.pop(),
+            child: const Text('Confirm'),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -49,17 +53,23 @@ class SnackbarScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             FilledButton.tonal(
-                onPressed: () {
-                  // ? Built-in dialog to show a list of used libraries in the app and its info
-                  showAboutDialog(context: context, children: [
+              onPressed: () {
+                // ? Built-in dialog to show a list of used libraries in the app and its info
+                showAboutDialog(
+                  context: context,
+                  children: [
                     const Text(
-                        'Magna irure do esse incididunt ex sit ad cupidatat esse sunt laborum.'),
-                  ]);
-                },
-                child: const Text('Used Licenses')),
+                      'Magna irure do esse incididunt ex sit ad cupidatat esse sunt laborum.',
+                    ),
+                  ],
+                );
+              },
+              child: const Text('Used Licenses'),
+            ),
             FilledButton.tonal(
-                onPressed: () => openDialog(context),
-                child: const Text('Show Dialog'))
+              onPressed: () => openDialog(context),
+              child: const Text('Show Dialog'),
+            ),
           ],
         ),
       ),
