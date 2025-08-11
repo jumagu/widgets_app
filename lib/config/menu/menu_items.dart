@@ -63,4 +63,16 @@ const appMenuItems = <MenuItem>[
     link: '/infinite',
     icon: Icons.list_alt_rounded,
   ),
+  MenuItem(
+    title: 'Counter',
+    subTitle: 'Just a simple counter',
+    link: '/counter',
+    icon: Icons.timer,
+  ),
+  MenuItem(
+    title: 'Theme Controller',
+    subTitle: 'Change the app theme',
+    link: '/theme-controller',
+    icon: Icons.color_lens_outlined,
+  ),
 ];
