@@ -28,4 +28,10 @@ class AppTheme {
     colorSchemeSeed: availableColors[selectedColor],
     appBarTheme: AppBarTheme(centerTitle: false),
   );
+
+  // copyWith pattern
+  AppTheme copyWith({int? selectedColor, bool? isDarkMode}) => AppTheme(
+    selectedColor: selectedColor ?? this.selectedColor,
+    isDarkMode: isDarkMode ?? this.isDarkMode,
+  );
 }

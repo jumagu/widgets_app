@@ -9,7 +9,7 @@ class ThemeControllerScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final bool isDarkMode = ref.watch(isDarkModeProvider);
+    final bool isDarkMode = ref.watch(themeNotifierProvider).isDarkMode;
 
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +20,8 @@ class ThemeControllerScreen extends ConsumerWidget {
               isDarkMode ? Icons.dark_mode_outlined : Icons.light_mode_outlined,
             ),
             onPressed: () {
-              ref.read(isDarkModeProvider.notifier).update((state) => !state);
+              // ref.read(isDarkModeProvider.notifier).update((state) => !state);
+              ref.read(themeNotifierProvider.notifier).toggleDarkMode();
             },
           ),
         ],
@@ -35,8 +36,9 @@ class _ThemeControllerView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final int selectedColor = ref.watch(selectedColorProvider);
     final List<Color> colors = ref.watch(colorListProvider);
+    // final int selectedColor = ref.watch(selectedColorProvider);
+    final int selectedColor = ref.watch(themeNotifierProvider).selectedColor;
 
     return ListView.builder(
       itemCount: colors.length,
@@ -48,9 +50,10 @@ class _ThemeControllerView extends ConsumerWidget {
           value: index,
           groupValue: selectedColor,
           onChanged: (value) {
-            ref
-                .read(selectedColorProvider.notifier)
-                .update((state) => state = value!);
+            // ref
+            //     .read(selectedColorProvider.notifier)
+            //     .update((state) => state = value!);
+            ref.read(themeNotifierProvider.notifier).changeColorIndex(value!);
           },
         );
       },
